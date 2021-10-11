@@ -10,6 +10,22 @@
     text-align: center;
 }
 
+h2 {
+    background-color: rgb(168, 138, 138);
+    color: rgb(71, 6, 6);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 1vw;
+    text-align: center;
+}
+
+h5 {
+    background-color: rgb(212, 212, 174);
+    color: rgb(71, 6, 6);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 1vw;
+    text-align: center;
+}
+
 .categDiv {
     position: relative;
     max-width: 300px;
