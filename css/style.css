@@ -28,54 +28,28 @@ h5 {
 
 .categDiv {
     position: relative;
-    max-width: 300px;
-    padding: 10px;
-    /* Maximum width */
-    /* Center it */
-}
-
-.categDiv .content {
-    position: absolute;
-    /* Position the background text */
-    bottom: 0;
-    /* At the bottom. Use top:0 to append it to the top */
-    background: rgb(0, 0, 0);
-    /* Fallback color */
-    background: rgba(0, 0, 0, 0.5);
-    /* Black background with 0.5 opacity */
-    color: #f1f1f1;
-    /* Grey text */
-    width: 97%;
-    /* Full width */
-    padding: 20px;
-    /* Some padding */
+    max-width: 30%;
+    padding: 1%;
 }
 
 .flexDiv {
     display: flex;
 }
 
-
-/* The overlay effect - lays on top of the container and over the image */
-
 .overlay {
     position: absolute;
     bottom: 0;
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.5);
-    /* Black see-through */
     color: #f1f1f1;
     width: 93%;
     transition: .5s ease;
     opacity: 0;
     color: white;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 15px;
+    padding: 2%;
     text-align: center;
 }
-
-
-/* When you mouse over the container, fade in the overlay title */
 
 .categDiv:hover .overlay {
     opacity: 1;
