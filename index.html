@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="./css/style.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Fav Recipies</title>
+    <style>
+        * {
+            padding: 0.5%;
+        }
+        
+        .titleh1 {
+            background-color: rgb(211, 115, 115);
+            color: rgb(71, 6, 6);
+        }
+        
+        .categDiv {
+            position: relative;
+            max-width: 300px;
+            padding: 10px;
+            /* Maximum width */
+            /* Center it */
+        }
+        
+        .categDiv .content {
+            position: absolute;
+            /* Position the background text */
+            bottom: 0;
+            /* At the bottom. Use top:0 to append it to the top */
+            background: rgb(0, 0, 0);
+            /* Fallback color */
+            background: rgba(0, 0, 0, 0.5);
+            /* Black background with 0.5 opacity */
+            color: #f1f1f1;
+            /* Grey text */
+            width: 97%;
+            /* Full width */
+            padding: 20px;
+            /* Some padding */
+        }
+        
+        .flexDiv {
+            display: flex;
+        }
+        /* The overlay effect - lays on top of the container and over the image */
+        
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);
+            /* Black see-through */
+            color: #f1f1f1;
+            width: 93%;
+            transition: .5s ease;
+            opacity: 0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        /* When you mouse over the container, fade in the overlay title */
+        
+        .categDiv:hover .overlay {
+            opacity: 1;
+        }
+        
+        #recipeImgs {
+            width: 20vw;
+            height: 20vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="titleh1">Yummy Tummy Recipie Blog</h1>
+    <!--<div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h3 class="card-title">Seafood</h3>
+        </div>
+        <img src="https://www.themealdb.com/images/media/meals/1548772327.jpg" class="card-img-top" alt="Seafood image" style="width: 18rem;height: 15rem;">
+    </div>-->
+    <div class="flexDiv">
+        <div class="categDiv">
+            <img src="https://www.themealdb.com/images/media/meals/1550441882.jpg" id="Breakfast" alt="Notebook" style="width:100%;" onclick="getRecipies(this.id)">
+            <div class="overlay">
+                <h1>Breakfast</h1>
+                <p>English Breakfast recipies..</p>
+            </div>
+        </div>
+        <div class="categDiv">
+            <img src="https://www.themealdb.com/images/media/meals/tvvxpv1511191952.jpg" id="Starter" alt="Notebook" style="width:100%;" onclick="getRecipies(this.id)">
+            <div class="overlay">
+                <h1>Starter</h1>
+                <p>Soup recipies</p>
+            </div>
+        </div>
+        <div class="categDiv">
+            <img src="https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg" id="Dessert" alt="Notebook" style="width:100%;" onclick="getRecipies(this.id)">
+            <div class="overlay">
+                <h1>Dessert</h1>
+                <p>Cakes & other Dessert recipies </p>
+            </div>
+        </div>
+        <div class="categDiv">
+            <img src="https://www.themealdb.com/images/media/meals/qywups1511796761.jpg" id="Side" alt="Notebook" style="width:100%;" onclick="getRecipies(this.id)">
+            <div class="overlay">
+                <h1>Side</h1>
+                <p>Side Dish Recipies</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="recipDisp"></div>
+    <div class="flexDiv">
+        <div class="categDiv">
+            <img src="https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg" id="Chicken" alt="Notebook" style="width:100%;" onclick="getRecipies(this.id)">
+            <div class="overlay">
+                <h1>Chicken</h1>
+                <p>Yummy chicken recipies</p>
+            </div>
+        </div>
+        <div class="categDiv">
+            <img src="https://www.themealdb.com/images/media/meals/1548772327.jpg" id="Seafood" alt="Notebook" style="width:100%;" onclick="getRecipies(this.id)">
+            <div class="overlay">
+                <h1>Seafood</h1>
+                <p>Seafood - Fish,Prawn,etc recipies </p>
+            </div>
+        </div>
+        <div class="categDiv">
+            <img src="https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg" id="Vegetarian" alt="Notebook" style="width:100%;" onclick="getRecipies(this.id)">
+            <div class="overlay">
+                <h1>Vegetarian</h1>
+                <p>Veg recipies</p>
+            </div>
+        </div>
+        <div class="categDiv">
+            <img src="https://www.themealdb.com/images/media/meals/vxuyrx1511302687.jpg" id="Miscellaneous" alt="Notebook" style="width:100%;" onclick="getRecipies(this.id)">
+            <div class="overlay">
+                <h1>Miscellaneous</h1>
+                <p>Different varities of recipies</p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
