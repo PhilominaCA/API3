@@ -38,7 +38,7 @@ async function getRecipies(category) {
             divClass.appendChild(divRecip);
             document.getElementById("recipDisp").appendChild(divClass);
 
-            //limited to 5 recipies.
+            //limited to 6 recipies if there are more.
             if (i == 5)
                 break;
         }
